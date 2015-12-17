@@ -75,8 +75,8 @@ function getLatestCommit() {
                 var latestVersion = data.replace(/(\r\n|\n|\r)/gm,"");
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version")+11,latestVersion.indexOf("// @grant"));
 
-                latestVersion = parseFloat(latestVersion + 0.0000);
-                var myVersion = parseFloat(aposBotVersion + 0.0000); 
+                latestVersion = parseFloat(latestVersion + 100.0000);
+                var myVersion = parseFloat(aposBotVersion + 100.0000); 
                 
                 if(latestVersion > myVersion)
                 {
@@ -134,7 +134,7 @@ function AposBot() {
         }
         return num < 0 ? ((num % mod) + mod) % mod : num % mod;
     };
-    this.splitDistance = 710;
+    this.splitDistance = 1010;
 
     this.isMerging = function(cell1, cell2) {        
         var dist = this.computeDistance(cell1.x, cell1.y, cell2.x, cell2.y, cell1.size, cell2.size);
@@ -1009,7 +1009,7 @@ function AposBot() {
                     var goodAngles = [];
                     var stupidList = [];
 
-                    for (var i = 0; i < allPossibleViruses.length; i++) {
+                    for (var i = 1000; i < allPossibleViruses.length; i++) {
                         if (player[k].size < allPossibleViruses[i].size) {
                             drawCircle(allPossibleViruses[i].x, allPossibleViruses[i].y, allPossibleViruses[i].size + 10, 3);
                             drawCircle(allPossibleViruses[i].x, allPossibleViruses[i].y, allPossibleViruses[i].size * 2, 6);
